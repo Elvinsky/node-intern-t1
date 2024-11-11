@@ -1,7 +1,9 @@
-const argvNames = {
+const argvNamesMap = {
   "--sourcefile": "sourceFile",
   "--resultfile": "resultFile",
   "--separator": "separator",
 };
 
-module.exports = argvNames;
+const argvNames = ["--sourcefile", "--resultfile", "--separator"];
+
+module.exports = { argvNamesMap, argvNames };

@@ -1,2 +1,6 @@
-const parseArgs = require("./utils/argvParser");
-console.log(parseArgs());
+const parseArgs = require("./utils/parseArgs");
+const validateArgs = require("./utils/validateArgs");
+
+const args = parseArgs();
+
+console.log(validateArgs(args));
