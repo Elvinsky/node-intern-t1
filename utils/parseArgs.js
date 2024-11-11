@@ -1,4 +1,4 @@
-const { argvNamesMap } = require("../constants/argvNames");
+const { argvNamesMap } = require("../constants/constants.argv");
 
 const parseNamedArgv = () => {
   const rawArgs = process.argv.slice(2); // Удаляем пути файла и ноды

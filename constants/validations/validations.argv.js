@@ -1,5 +1,5 @@
-const argvErrors = require("../errors/argvErrors");
-const { argvNamesMap } = require("../argvNames");
+const argvErrors = require("../errors/errors.argv");
+const { argvNamesMap } = require("../constants.argv");
 
 const validations = [
   (args) => {

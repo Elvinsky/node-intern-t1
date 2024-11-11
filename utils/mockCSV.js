@@ -1,10 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const csvGeneratorErrors = require("../constants/errors/errors.mocker");
+const throwError = require("./errorThrow");
 const { faker } = require("@faker-js/faker");
 
 const filePath = path.join(__dirname, "..", "files", "large.csv");
 
-const size = 1024 * 1024;
+const size = 1024 * 1024 * 10;
 const columns = 10;
 const separator = ",";
 
@@ -19,7 +21,7 @@ const readHeaders = async () => {
 
     return headers;
   } catch (error) {
-    console.error("Error reading headers:", error);
+    throwError(csvGeneratorErrors.errorReadingHeaders(error));
   }
 };
 
@@ -51,7 +53,7 @@ const generateCSV = async () => {
       1000
     );
 
-    while (fs.statSync(filePath).size < 1024 * 1024 * 1024 * 10) {
+    while (fs.statSync(filePath).size < size) {
       fs.appendFileSync(filePath, randomNumberOfRows);
     }
 

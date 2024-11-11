@@ -1,6 +1,10 @@
 const parseArgs = require("./utils/parseArgs");
-const validateArgs = require("./utils/validateArgs");
+const parseCSVtoJSON = require("./utils/parseCSVtoJSON");
 
-const args = parseArgs();
+const parsedArgs = parseArgs();
 
-console.log(validateArgs(args));
+parseCSVtoJSON(
+  parsedArgs.sourceFile,
+  parsedArgs.resultFile,
+  parsedArgs.separator
+);

@@ -1,9 +1,6 @@
-const validations = require("../constants/validations/argvValidations");
+const validations = require("../constants/validations/validations.argv");
 
-const throwError = (msg) => {
-  console.error(`Error: ${msg}`);
-  process.exit(1);
-};
+const throwError = require("./errorThrow");
 
 const validateArgs = (args) => {
   validations.forEach((validation) => {
